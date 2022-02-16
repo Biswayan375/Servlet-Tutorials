@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- This xml file is used for mapping. Let say there is a request from client to some url /abc on your
+	server. Now, if you want your server to handle that request and send that client some appropriate response
+	then you must write some code. Obviously in this case you will be writing Java code and not assembly.
+	So, your java code will get that request and send the response. Everything should be fine till the question
+	comes that everything in Java is a class and inside that we have methods. So to serve a request from a
+	client you must call the appropriate method of the appropriate class. That appropriate method calling is
+	handled by in-built class called HttpServlet. But how would you know that when request comes at /abc, X
+	class's appropriate method should be called and when that request comes at /def, Y class's appropriate
+	method should get called? This thing is handled by this xml file. It maps specific urls to specific Java
+	class. -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <servlet>
+  	<servlet-name>add</servlet-name>
+  	<servlet-class>com.servletTutorial.AddServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>add</servlet-name>
+  	<url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+  	<servlet-name>square</servlet-name>
+  	<servlet-class>com.utilityServlets.SquareServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>square</servlet-name>
+  	<url-pattern>/square</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+  	<servlet-name>CallingServletFromServlet</servlet-name>
+  	<servlet-class>com.servletTutorial.CallingServletFromServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>CallingServletFromServlet</servlet-name>
+  	<url-pattern>/sum-square</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+  	<servlet-name>UrlRedirectDemo</servlet-name>
+  	<servlet-class>com.servletTutorial.UrlRedirectDemo</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>UrlRedirectDemo</servlet-name>
+  	<url-pattern>/sum-square-urlRedirect</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>UrlRedirectSquareServlet</servlet-name>
+  	<servlet-class>com.utilityServlets.SquareServlet_UrlRedirect</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>UrlRedirectSquareServlet</servlet-name>
+  	<url-pattern>/square-urlRedirect</url-pattern>
+  </servlet-mapping>
+</web-app>
