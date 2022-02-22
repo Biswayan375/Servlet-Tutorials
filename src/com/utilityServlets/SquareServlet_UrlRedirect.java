@@ -11,6 +11,6 @@ public class SquareServlet_UrlRedirect extends HttpServlet {
 		
 		res.setStatus(200);
 		res.setContentType("application/json");
-		res.getWriter().println("{\"square of sum\":" + sum + "}");
+		res.getWriter().println("{\"sum\":" + req.getParameter("sum") + ",\"square of sum\":" + sum + "}");
 	}
 }
